@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tnews">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TNews">
+        <activity
+            android:name="com.java.cuitingyu.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.java.cuitingyu.NewsDetailActivity"
+            android:parentActivityName="com.java.cuitingyu.MainActivity">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.java.cuitingyu.MainActivity" />
+        </activity>
+        <activity android:name="com.java.cuitingyu.search.SearchActivity"
+            android:parentActivityName="com.java.cuitingyu.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.java.cuitingyu.MainActivity" />
+        </activity>
+        <activity android:name="com.java.cuitingyu.record.RecordActivity"
+            android:parentActivityName="com.java.cuitingyu.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.java.cuitingyu.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

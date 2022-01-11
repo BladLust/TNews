@@ -1,0 +1,276 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.java.cuitingyu.newsList.NewsListItemFragment"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_3254818 { 
+   	label=java
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_267605685 { 
+   	label=cuitingyu
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   ApiKeyword1259025170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ApiKeyword</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mKeyword: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mScore: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ApiResponse1259025170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ApiResponse</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   mNewsList: ArrayList&lt;ApiSingleNews&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mPageSize: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mTotalNewsCount: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ApiSingleNews1259025170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ApiSingleNews</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   mCategory: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mContent: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mDisplayType: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mFavoriteTime: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mImageUrlCompiled: ArrayList&lt;String&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mImageUrlCount: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mImageUrlUncompiled: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mKeywords: ArrayList&lt;ApiKeyword&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mLanguage: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mNewsID: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mNewsUrl: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mPublishTime: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mPublisher: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mReadTime: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mTitle: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mVideoUrl: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- imageUrlCompile()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ markFavorited()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ markRead()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ApiSingleNewsDao_Impl1259025170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ApiSingleNewsDao_Impl</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   __db: RoomDatabase [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   __deletionAdapterOfApiSingleNews: EntityDeletionOrUpdateAdapter&lt;ApiSingleNews&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   __insertionAdapterOfApiSingleNews: EntityInsertionAdapter&lt;ApiSingleNews&gt; [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ checkNewsFavorite(newsId: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkNewsRead(newsId: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ delete(newsPiece: ApiSingleNews)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getById(newsId: String): ApiSingleNews</TD></TR>
+<TR><TD ALIGN="LEFT" >+ insertAll(newsPieces: ApiSingleNews...)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadAllByIds(newsPieceIds: int[]): List&lt;ApiSingleNews&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadByFavorite(): List&lt;ApiSingleNews&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadByRead(): List&lt;ApiSingleNews&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ApiSingleNewsDatabase1259025170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ApiSingleNewsDatabase</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ mApiSingleNewsDao(): ApiSingleNewsDao</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ApiSingleNewsDatabase_Impl1259025170[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ApiSingleNewsDatabase_Impl</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _apiSingleNewsDao: ApiSingleNewsDao [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ clearAllTables()</TD></TR>
+<TR><TD ALIGN="LEFT" ># createInvalidationTracker(): InvalidationTracker</TD></TR>
+<TR><TD ALIGN="LEFT" ># createOpenHelper(configuration: DatabaseConfiguration): SupportSQLiteOpenHelper</TD></TR>
+<TR><TD ALIGN="LEFT" >+ mApiSingleNewsDao(): ApiSingleNewsDao</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NewsListItemFragment355688381[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NewsListItemFragment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mApiRetrofitNews: ApiRetrofitNews [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mBaseSize: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mCategory: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mDisplayParam: LayoutParams [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mEndTime: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mInvisibleParam: LayoutParams [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mKeyword: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   mLoadingCallBack: Callback&lt;ApiResponse&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   mLoadingMore: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mNewsListRecyclerAdapter: NewsListRecyclerAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   mRefreshing: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mRetrofit: Retrofit [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mStartTime: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mXRecyclerView: XRecyclerView [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle): View</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onViewCreated(view: View, savedInstanceState: Bundle)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NewsListRecyclerAdapter355688381[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NewsListRecyclerAdapter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   mApiResponse: ApiResponse [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   mApiSingleNewsDao: ApiSingleNewsDao [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mDb: WeakReference&lt;ApiSingleNewsDatabase&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   mRecyclerView: RecyclerView [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getItemViewType(position: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onAttachedToRecyclerView(recyclerView: RecyclerView)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onBindViewHolder(holder: ViewHolder, position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreateViewHolder(parent: ViewGroup, viewType: int): ViewHolder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+ApiResponse1259025170 -> ApiSingleNews1259025170[label="mNewsList
+[0..*]"];
+ApiSingleNews1259025170 -> ApiKeyword1259025170[label="mKeywords
+[0..*]"];
+ApiSingleNewsDao_Impl1259025170 -> ApiSingleNews1259025170[label="__deletionAdapterOfApiSingleNews
+[0..1]"];
+ApiSingleNewsDao_Impl1259025170 -> ApiSingleNews1259025170[label="__insertionAdapterOfApiSingleNews
+[0..1]"];
+ApiSingleNewsDatabase1259025170 -> ApiSingleNewsDatabase_Impl1259025170[arrowhead=none, arrowtail=empty, dir=both];
+NewsListItemFragment355688381 -> ApiResponse1259025170[label="mLoadingCallBack
+[0..1]"];
+NewsListItemFragment355688381 -> NewsListRecyclerAdapter355688381[label="mNewsListRecyclerAdapter
+[0..1]"];
+NewsListRecyclerAdapter355688381 -> ApiResponse1259025170[label="mApiResponse
+[0..1]"];
+NewsListRecyclerAdapter355688381 -> ApiSingleNewsDao_Impl1259025170[arrowhead=none, arrowtail=empty, dir=both];
+NewsListRecyclerAdapter355688381 -> ApiSingleNewsDatabase1259025170[label="mDb
+[0..1]"];
+    
+}
+@enduml
